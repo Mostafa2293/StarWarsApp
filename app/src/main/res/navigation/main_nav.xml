@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/peopleFragment">
+
+    <fragment
+        android:id="@+id/filmsFragment"
+        android:name="com.mostafa.starwarsfans.presentation.films.FilmsFragment"
+        android:label="films"
+        tools:layout="@layout/fragment_films" />
+    <fragment
+        android:id="@+id/peopleFragment"
+        android:name="com.mostafa.starwarsfans.presentation.people.PeopleFragment"
+        android:label="people"
+        tools:layout="@layout/fragment_people" />
+    <fragment
+        android:id="@+id/planetsFragment"
+        android:name="com.mostafa.starwarsfans.presentation.planets.PlanetsFragment"
+        android:label="planets"
+        tools:layout="@layout/fragment_planets" />
+    <fragment
+        android:id="@+id/speciesFragment"
+        android:name="com.mostafa.starwarsfans.presentation.species.SpeciesFragment"
+        android:label="species"
+        tools:layout="@layout/fragment_species" />
+    <fragment
+        android:id="@+id/starShipsFragment"
+        android:name="com.mostafa.starwarsfans.presentation.starships.StarShipsFragment"
+        android:label="star ships"
+        tools:layout="@layout/fragment_star_ships" />
+    <fragment
+        android:id="@+id/vehiclesFragment"
+        android:name="com.mostafa.starwarsfans.presentation.vehicles.VehiclesFragment"
+        android:label="vehicles"
+        tools:layout="@layout/fragment_vehicles" />
+</navigation>

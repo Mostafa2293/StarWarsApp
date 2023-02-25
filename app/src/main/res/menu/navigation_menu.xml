@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group>
+        <item
+            android:title="people"
+            android:id="@+id/peopleFragment"/>
+        <item
+            android:title="films"
+            android:id="@+id/filmsFragment"/>
+        <item
+            android:title="star ships"
+            android:id="@+id/starShipsFragment"/>
+        <item
+            android:title="vehicles"
+            android:id="@+id/vehiclesFragment"/>
+        <item
+            android:title="species"
+            android:id="@+id/speciesFragment"/>
+        <item
+            android:title="plants"
+            android:id="@+id/planetsFragment"/>
+    </group>
+
+</menu>
