@@ -14,12 +14,12 @@ import javax.inject.Inject
 
 class GetAllSpeciesUseCase @Inject constructor(private val speciesPagingDS: SpeciesPagingDS) {
 
-    operator fun invoke(): Flow<PagingData<Species>> {
+    operator fun invoke(searchKey:String): Flow<PagingData<Species>> {
         return Pager(
             config = PagingConfig(
                 pageSize =10,
                 enablePlaceholders = false
-            ), pagingSourceFactory = {speciesPagingDS.createPagingSource()}
+            ), pagingSourceFactory = {speciesPagingDS.createPagingSourceWithKey(searchKey)}
         ).flow
     }
 }

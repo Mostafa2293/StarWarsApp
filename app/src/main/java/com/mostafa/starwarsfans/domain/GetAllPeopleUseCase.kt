@@ -11,12 +11,12 @@ import javax.inject.Inject
 
 class GetAllPeopleUseCase @Inject constructor(private val peoplePagingDS:PeoplePagingDS) {
 
-    operator fun invoke(): Flow<PagingData<People>> {
+    operator fun invoke(searchKey:String): Flow<PagingData<People>> {
         return Pager(
             config = PagingConfig(
                 pageSize =10,
                 enablePlaceholders = false
-            ), pagingSourceFactory = {peoplePagingDS.createPagingSource()}
+            ), pagingSourceFactory = {peoplePagingDS.createPagingSourceWithKey(searchKey)}
         ).flow
     }
 }

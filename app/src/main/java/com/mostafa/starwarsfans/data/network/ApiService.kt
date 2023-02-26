@@ -10,17 +10,16 @@ import retrofit2.http.Query
 interface ApiService {
 
     @GET(ALL_PEOPLE)
-    suspend fun getPeople(@Query("page") page:Int):PeopleResponse
+    suspend fun getPeople(@Query("page") page:Int,@Query("search") search:String =""):PeopleResponse
 
     @GET(ALL_FILMS)
-    suspend fun getFilms(@Query("page") page:Int):FilmsResponse
+    suspend fun getFilms(@Query("page") page:Int,@Query("search") search:String =""):FilmsResponse
 
     @GET(ALL_PLANETS)
-    suspend fun getPlanets(@Query("page") page:Int):PlanetsResponse
-
+    suspend fun getPlanets(@Query("page") page:Int,@Query("search") search:String =""):PlanetsResponse
 
     @GET(ALL_SPECIES)
-    suspend fun getSpecies(@Query("page") page:Int):SpeciesResponse
+    suspend fun getSpecies(@Query("page") page:Int,@Query("search") search:String =""):SpeciesResponse
 
     companion object {
         //Get all people
@@ -31,7 +30,5 @@ interface ApiService {
         const val ALL_PLANETS = "planets/"
         //Get all species
         const val ALL_SPECIES = "species/"
-
-
     }
 }

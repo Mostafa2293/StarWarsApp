@@ -3,12 +3,13 @@ package com.mostafa.starwarsfans.data
 import android.util.Log
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
+import com.mostafa.starwarsfans.data.people.model.People
 
 abstract class BasePagingDataSource<Model : Any> {
     open val startingPageIndex = 1
     open val pageSize = 10
     open var canGoNext: Boolean = false
-
+      var searchKey:String = ""
     fun createPagingSource(): PagingSource<Int, Model> {
         return object : PagingSource<Int, Model>() {
             override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Model> {
@@ -38,6 +39,13 @@ abstract class BasePagingDataSource<Model : Any> {
             }
         }
     }
+
+
+    fun createPagingSourceWithKey(searchKey:String): PagingSource<Int, Model> {
+        this.searchKey = searchKey
+        return createPagingSource()
+    }
+
 
     abstract suspend fun loadData(page: Int, size: Int): List<Model>
 

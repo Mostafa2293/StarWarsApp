@@ -6,8 +6,8 @@ import com.mostafa.starwarsfans.data.people.repo.PeopleRepo
 import com.mostafa.starwarsfans.data.plantes.model.PlanetsResponse
 
 class PlantesRepoImpl (private val apiService: ApiService): PlantesRepo {
-    override suspend fun getAllPlantesFromRemote(page: Int): PlanetsResponse {
-        return apiService.getPlanets(page)
+    override suspend fun getAllPlantesFromRemote(page: Int,searchKey:String): PlanetsResponse {
+        return apiService.getPlanets(page,searchKey)
     }
 
 }

@@ -9,12 +9,6 @@
             android:title="films"
             android:id="@+id/filmsFragment"/>
         <item
-            android:title="star ships"
-            android:id="@+id/starShipsFragment"/>
-        <item
-            android:title="vehicles"
-            android:id="@+id/vehiclesFragment"/>
-        <item
             android:title="species"
             android:id="@+id/speciesFragment"/>
         <item

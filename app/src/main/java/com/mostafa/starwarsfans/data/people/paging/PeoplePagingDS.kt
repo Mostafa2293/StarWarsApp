@@ -11,7 +11,7 @@ import javax.inject.Inject
 class PeoplePagingDS @Inject constructor(private val repo: PeopleRepo) : BasePagingDataSource<People>() {
 
     override suspend fun loadData(page: Int, size: Int): List<People> {
-       return repo.getAllPeopleFromRemote(page).let {
+       return repo.getAllPeopleFromRemote(page,searchKey).let {
            it.people
        }
     }

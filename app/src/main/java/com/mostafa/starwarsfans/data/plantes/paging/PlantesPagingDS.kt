@@ -13,7 +13,7 @@ import javax.inject.Inject
 class PlantesPagingDS @Inject constructor(private val repo: PlantesRepo) : BasePagingDataSource<Planet>() {
 
     override suspend fun loadData(page: Int, size: Int): List<Planet> {
-       return repo.getAllPlantesFromRemote(page).let {
+       return repo.getAllPlantesFromRemote(page,searchKey).let {
            it.planets
        }
     }

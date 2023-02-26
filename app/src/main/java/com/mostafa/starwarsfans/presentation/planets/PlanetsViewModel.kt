@@ -24,10 +24,10 @@ class PlanetsViewModel @Inject constructor(
     private val _planets: MutableStateFlow<PagingData<Planet>?> = MutableStateFlow(null)
     val planets = _planets.asStateFlow()
 
-    fun getPlanets(){
+    fun getPlanets(searchKey:String=""){
         viewModelScope.launch {
             try {
-                getAllPlanetsUseCase.invoke().cachedIn(this).collectLatest { pagingData ->
+                getAllPlanetsUseCase.invoke(searchKey).cachedIn(this).collectLatest { pagingData ->
                     _planets.value = pagingData.map { model ->
                         Planet(
                             climate = model.climate,

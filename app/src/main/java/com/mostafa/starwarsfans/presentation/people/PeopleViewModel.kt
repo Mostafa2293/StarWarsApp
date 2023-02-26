@@ -23,10 +23,10 @@ class PeopleViewModel @Inject constructor(
     private val _people:MutableStateFlow<PagingData<People>?> = MutableStateFlow(null)
     val people = _people.asStateFlow()
 
-    fun getPeople(){
+    fun getPeople(searchKey:String=""){
         viewModelScope.launch {
             try {
-                getAllPeopleUseCase.invoke().cachedIn(this).collectLatest { pagingData ->
+                getAllPeopleUseCase.invoke(searchKey).cachedIn(this).collectLatest { pagingData ->
                    _people.value = pagingData.map { model ->
                        People(
                            birth_year = model.birth_year,
@@ -53,5 +53,4 @@ class PeopleViewModel @Inject constructor(
             }
         }
     }
-
 }

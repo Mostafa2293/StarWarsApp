@@ -13,12 +13,12 @@ import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 class GetAllPlanetsUseCase @Inject constructor(private val planetsPagingDS: PlantesPagingDS) {
-    operator fun invoke(): Flow<PagingData<Planet>> {
+    operator fun invoke(searchKey:String): Flow<PagingData<Planet>> {
         return Pager(
             config = PagingConfig(
                 pageSize =10,
                 enablePlaceholders = false
-            ), pagingSourceFactory = {planetsPagingDS.createPagingSource()}
+            ), pagingSourceFactory = {planetsPagingDS.createPagingSourceWithKey(searchKey)}
         ).flow
     }
 }

@@ -24,11 +24,11 @@ class FilmsViewModel @Inject constructor(
     private val _films: MutableStateFlow<PagingData<Films>?> = MutableStateFlow(null)
     val films = _films.asStateFlow()
 
-    fun getFilms(){
+    fun getFilms(searchKey:String=""){
         viewModelScope.launch {
             try {
 
-                getAllFilmsUseCase.invoke().cachedIn(this).collectLatest { pagingData ->
+                getAllFilmsUseCase.invoke(searchKey).cachedIn(this).collectLatest { pagingData ->
                     _films.value = pagingData.map { model ->
                         Films(
                             characters = model.characters,

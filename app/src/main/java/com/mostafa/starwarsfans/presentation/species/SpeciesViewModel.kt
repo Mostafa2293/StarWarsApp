@@ -26,10 +26,10 @@ class SpeciesViewModel @Inject constructor(
     private val _species: MutableStateFlow<PagingData<Species>?> = MutableStateFlow(null)
     val species = _species.asStateFlow()
 
-    fun getSpecies(){
+    fun getSpecies(searchKey:String=""){
         viewModelScope.launch {
             try {
-                getAllSpeciesUseCase.invoke().cachedIn(this).collectLatest { pagingData ->
+                getAllSpeciesUseCase.invoke(searchKey).cachedIn(this).collectLatest { pagingData ->
                     _species.value = pagingData.map { model ->
                        Species(
                            average_height = model.average_height,

@@ -13,7 +13,7 @@ import javax.inject.Inject
 class FilmsPagingDS @Inject constructor(private val repo: FilmsRepo) : BasePagingDataSource<Films>() {
 
     override suspend fun loadData(page: Int, size: Int): List<Films> {
-       return repo.getAllFilmsFromRemote(page).let {
+       return repo.getAllFilmsFromRemote(page,searchKey).let {
            it.films
        }
     }

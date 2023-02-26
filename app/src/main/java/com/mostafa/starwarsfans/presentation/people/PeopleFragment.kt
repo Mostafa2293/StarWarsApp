@@ -6,12 +6,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.SearchView
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.RecyclerView
 import com.mostafa.starwarsfans.R
+import com.mostafa.starwarsfans.databinding.FragmentPeopleBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.collectLatest
@@ -21,21 +24,21 @@ import kotlinx.coroutines.launch
 class PeopleFragment : Fragment() {
 
     private val viewModel: PeopleViewModel by viewModels()
+    lateinit var binding:FragmentPeopleBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        Log.d("FFFFFFF", "onCreateView: created")
-        return inflater.inflate(R.layout.fragment_people, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_people, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.getPeople()
         val peopleAdapter = PeopleListAdapter()
-        val recyclerView:RecyclerView = view.findViewById(R.id.allPeopleList)
+        val recyclerView:RecyclerView = binding.allPeopleList
 
         recyclerView.adapter = peopleAdapter
 
@@ -46,6 +49,22 @@ class PeopleFragment : Fragment() {
                 }
             }
         }
+
+        binding.searchBar.setOnQueryTextListener(object :SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                Log.d("Search", "onQueryTextSubmit: $query")
+                viewModel.getPeople(query!!)
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                Log.d("Search", "onQueryTextChange: $newText")
+                viewModel.getPeople(newText!!)
+                return true
+            }
+
+
+        })
 
     }
 }

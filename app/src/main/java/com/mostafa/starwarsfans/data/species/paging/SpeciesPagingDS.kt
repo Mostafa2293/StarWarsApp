@@ -15,7 +15,7 @@ import javax.inject.Inject
 class SpeciesPagingDS @Inject constructor(private val repo: SpeciesRepo) : BasePagingDataSource<Species>() {
 
     override suspend fun loadData(page: Int, size: Int): List<Species> {
-       return repo.getAllSpeciesFromRemote(page).let {
+       return repo.getAllSpeciesFromRemote(page,searchKey).let {
            it.species
        }
     }

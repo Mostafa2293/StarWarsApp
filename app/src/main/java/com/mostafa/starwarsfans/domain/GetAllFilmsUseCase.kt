@@ -12,12 +12,12 @@ import javax.inject.Inject
 
 class GetAllFilmsUseCase @Inject constructor(private val filmsPagingDS: FilmsPagingDS) {
 
-    operator fun invoke(): Flow<PagingData<Films>> {
+    operator fun invoke(searchKey:String): Flow<PagingData<Films>> {
         return Pager(
             config = PagingConfig(
                 pageSize =10,
                 enablePlaceholders = false
-            ), pagingSourceFactory = {filmsPagingDS.createPagingSource()}
+            ), pagingSourceFactory = {filmsPagingDS.createPagingSourceWithKey(searchKey)}
         ).flow
     }
 }
