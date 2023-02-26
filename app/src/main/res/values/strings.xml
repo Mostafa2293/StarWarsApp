@@ -1,5 +1,36 @@
 <resources>
     <string name="app_name">Star Wars Fans</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="films_search_hint">Looking for films</string>
+    <string name="people_search_hint">Looking for people</string>
+    <string name="planets_search_hint">Looking for planets</string>
+    <string name="species_search_hint">Looking for species</string>
+    <string name="films_title">Title:</string>
+    <string name="films_director">Director:</string>
+    <string name="films_producer">Producer:</string>
+    <string name="films_release_date">Release Date:</string>
+    <string name="people_name">Name:</string>
+    <string name="people_height">Height:</string>
+    <string name="people_mass">Mass:</string>
+    <string name="people_birthday">Birthday:</string>
+    <string name="people_gender">Gender:</string>
+    <string name="people_skin_color">Skin Color:</string>
+    <string name="people_eye_care">Eye Care:</string>
+    <string name="people_hair_color">Hair Color:</string>
+    <string name="planets_name">Name:</string>
+    <string name="planets_rotation_period">Rotation period:</string>
+    <string name="planets_orbital_period">Orbital period:</string>
+    <string name="planets_diameter">Diameter:</string>
+    <string name="planets_climate">Climate:</string>
+    <string name="planets_gravity">Gravity:</string>
+    <string name="planets_terrain">Terrain:</string>
+    <string name="planets_population">Population:</string>
+    <string name="species_name">Name:</string>
+    <string name="species_classification">Classification:</string>
+    <string name="species_designation">Designation:</string>
+    <string name="species_average_height">Average Height:</string>
+    <string name="species_skin_colors">Skin Colors:</string>
+    <string name="species_hair_colors">Hair Colors:</string>
+    <string name="species_eye_colors">Eye Colors:</string>
+    <string name="species_language">Language:</string>
 </resources>

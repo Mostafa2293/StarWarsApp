@@ -30,7 +30,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="Title:"
+                android:text="@string/films_title"
                 android:textStyle="bold"
                 android:textSize="18sp" />
 
@@ -56,7 +56,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="Director:"
+                android:text="@string/films_director"
                 android:textStyle="bold"
                 android:textSize="18sp" />
 
@@ -81,7 +81,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="Producer:"
+                android:text="@string/films_producer"
                 android:textStyle="bold"
                 android:textSize="18sp" />
 
@@ -106,7 +106,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="Release Date:"
+                android:text="@string/films_release_date"
                 android:textStyle="bold"
                 android:textSize="18sp" />
 
