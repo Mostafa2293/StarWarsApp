@@ -20,9 +20,7 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.RecyclerView
 import com.mostafa.starwarsfans.R
 import com.mostafa.starwarsfans.databinding.FragmentPeopleBinding
-import com.mostafa.starwarsfans.presentation.SearchInterface
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import java.util.Locale
@@ -73,17 +71,13 @@ class PeopleFragment : Fragment() {
 
 
         })
-        binding.searchButton.setOnClickListener(View.OnClickListener {
+
+        binding.searchButton.setOnClickListener {
             Log.d("button", "onSearchBtnClicked: Clicked!!")
             requestSpeechInput()
-        })
+        }
 
     }
-
-/*    override fun onSearchBtnClicked() {
-        Log.d("button", "onSearchBtnClicked: Clicked!!")
-        requestSpeechInput()
-    }*/
 
     private fun requestSpeechInput() {
         if(!SpeechRecognizer.isRecognitionAvailable(requireActivity())){
@@ -101,8 +95,8 @@ class PeopleFragment : Fragment() {
         super.onActivityResult(requestCode, resultCode, data)
         if(requestCode==requestCodeSpeech && resultCode == Activity.RESULT_OK){
             val result = data?.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS)
-//            viewModel.getPeople(result!![0].toString())
             binding.searchBar.setQuery(result!![0].toString(),true)
+            binding.searchBar.isIconified = false
         }
     }
 }

@@ -3,12 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-        <variable
-            name="searchInterface"
-            type="com.mostafa.starwarsfans.presentation.SearchInterface" />
-    </data>
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -36,9 +30,8 @@
                 android:id="@+id/searchButton"
                 android:layout_width="0dp"
                 android:layout_weight="0.3"
-                android:layout_height="wrap_content"
-                app:layout_constraintBottom_toTopOf="@id/allPeopleList"
-                android:background="@drawable/voicesr"
+                android:layout_height="50dp"
+                android:background="@drawable/microphonee"
                 />
 
 

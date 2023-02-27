@@ -7,14 +7,35 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.appcompat.widget.SearchView
-            android:id="@+id/searchBarS"
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/searchLayout"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            app:queryHint="@string/species_search_hint"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/allSpeciesList"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/searchBarS"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.7"
+                app:queryHint="@string/species_search_hint" />
+
+            <Button
+                android:id="@+id/searchButton"
+                android:layout_width="0dp"
+                android:layout_weight="0.3"
+                android:layout_height="50dp"
+                android:background="@drawable/microphonee"
+                />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/allSpeciesList"
@@ -23,7 +44,7 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/searchBarS"
+            app:layout_constraintTop_toBottomOf="@id/searchLayout"
             tools:listitem="@layout/list_item_all_species"
             tools:itemCount="2"
             />

@@ -7,14 +7,35 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.appcompat.widget.SearchView
-            android:id="@+id/searchBarP"
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/searchLayout"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            app:queryHint="@string/planets_search_hint"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/allPlanetsList"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/searchBarP"
+                android:layout_width="0dp"
+                android:layout_weight="1.7"
+                android:layout_height="wrap_content"
+                app:queryHint="@string/planets_search_hint"
+              />
+
+            <Button
+                android:id="@+id/searchButton"
+                android:layout_width="0dp"
+                android:layout_weight="0.3"
+                android:layout_height="50dp"
+                android:background="@drawable/microphonee"
+                />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/allPlanetsList"
@@ -23,7 +44,7 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/searchBarP"
+            app:layout_constraintTop_toBottomOf="@id/searchLayout"
             tools:listitem="@layout/list_item_all_plantes"
             tools:itemCount="2"
             />
