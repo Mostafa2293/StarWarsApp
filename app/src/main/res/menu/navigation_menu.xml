@@ -3,17 +3,23 @@
 
     <group>
         <item
-            android:title="people"
+            android:title="@string/people"
             android:id="@+id/peopleFragment"/>
         <item
-            android:title="films"
+            android:title="@string/films"
             android:id="@+id/filmsFragment"/>
         <item
-            android:title="species"
+            android:title="@string/species"
             android:id="@+id/speciesFragment"/>
         <item
-            android:title="plants"
+            android:title="@string/planets"
             android:id="@+id/planetsFragment"/>
+        <item
+            android:title="@string/star_ships"
+            android:id="@+id/starShipsFragment"/>
+        <item
+            android:title="@string/vehicles"
+            android:id="@+id/vehiclesFragment"/>
     </group>
 
 </menu>

@@ -33,4 +33,23 @@
     <string name="species_hair_colors">Hair Colors:</string>
     <string name="species_eye_colors">Eye Colors:</string>
     <string name="species_language">Language:</string>
+    <string name="startship_model">Model:</string>
+    <string name="startship_manufacturer">Manufacturer:</string>
+    <string name="startship_cost_in_credits">Cost In Credits:</string>
+    <string name="startship_length">Length:</string>
+    <string name="startship_max_atmosphering_speed">Max Atmosphering Speed:</string>
+    <string name="startship_crew">Crew:</string>
+    <string name="startship_passengers">Passengers:</string>
+    <string name="startship_cargo_capacity">Cargo Capacity:</string>
+    <string name="startship_consumables">Consumables:</string>
+    <string name="startship_hyper_drive_rating">Hyper Drive Rating:</string>
+    <string name="startship_mglt">MGLT:</string>
+    <string name="startship_starship_class">Starship Class:</string>
+    <string name="vehicle_class">Vehicle Class:</string>
+    <string name="people">people</string>
+    <string name="films">films</string>
+    <string name="species">species</string>
+    <string name="planets">planets</string>
+    <string name="star_ships">star ships</string>
+    <string name="vehicles">vehicles</string>
 </resources>
