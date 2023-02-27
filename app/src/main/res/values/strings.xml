@@ -5,6 +5,8 @@
     <string name="people_search_hint">Looking for people</string>
     <string name="planets_search_hint">Looking for planets</string>
     <string name="species_search_hint">Looking for species</string>
+    <string name="starships_search_hint">Looking for starship</string>
+    <string name="vehicles_search_hint">Looking for vehicle</string>
     <string name="films_title">Title:</string>
     <string name="films_director">Director:</string>
     <string name="films_producer">Producer:</string>

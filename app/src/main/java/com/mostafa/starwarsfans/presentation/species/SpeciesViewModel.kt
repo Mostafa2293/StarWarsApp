@@ -50,7 +50,7 @@ class SpeciesViewModel @Inject constructor(
                     }
                 }
             }catch (e: Exception){
-                Log.e("PeopleViewModel",e.message.toString())
+                Log.e("SpeciesViewModel",e.message.toString())
             }
         }
     }
